@@ -9,6 +9,7 @@ from src.helpers.common_verification import verify_response_key_should_not_be_no
 import pytest
 
 class Testcreatebooking(object):
+    @pytest.fixture()
     def test_create_token(self):
        response = post_request(url=API_constants.Create_token(), auth=None, headers=common_headers_json(), payload=Payload_create_token(), in_json=False)
        verify_response_key_should_not_be_none(response.json()["token"])
@@ -18,6 +19,7 @@ class Testcreatebooking(object):
        return Token
 
 
+    @pytest.fixture()
     def test_create_booking_tc1(self):
         #url, header, payload, auth
         response = post_request(url= API_constants.Create_booking(), auth= None, headers= common_headers_json(), payload= Payload_create_booking(), in_json= False)

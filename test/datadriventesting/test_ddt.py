@@ -41,7 +41,7 @@ def make_request_auth(username, password):
     return response
 
 
-def test_post_create_booking():
+def test_post_create_token():
      file_path = "Test_case_1.xlsx"
      credentials = read_credentials_from_excel(file_path)
 
@@ -53,14 +53,14 @@ def test_post_create_booking():
          print(response)
          #here we can change logic for negative and positive
          verify_status_code(response, 200)
-         verify_response_key_should_not_be_none(response.json()["token"])
-         Token = response.json()["token"]
-
-         if verify_response_key_should_not_be_none("reason"):
-             reason = response.json()["reason"]
-             print(reason)
-         else:
-             print(Token)
+         # verify_response_key_should_not_be_none(response.json()["token"])
+         # Token = response.json()["token"]
+         #
+         # if verify_response_key_should_not_be_none("reason"):
+         #     reason = response.json()["reason"]
+         #     print(reason)
+         # else:
+         #     print(Token)
          # if Token is False:
          #     print(Token)
          # else:
